@@ -13,7 +13,7 @@ describe('Park', function() {
     assert.strictEqual('We\'re all going to die', park1.name);
   })
 
-  // it('Should start with no dinosaurs', function() {
-  //   assert.strictEqual(0, park1.numberDinosaurs);
-  // })
+  it('Should start with no dinosaurs', function() {
+    assert.strictEqual(0, park1.numberDinosaurs);
+  })
 })
