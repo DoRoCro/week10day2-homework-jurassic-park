@@ -25,5 +25,14 @@ Park.prototype.eject = function(dinoType) {
   }
   return ejected;
 };
+Park.prototype.fecundityAbove = function(threshold) {
+  var selectedDinosArray = [];
+  for(dino of this.dinos){
+    if(dino.offspringPerYear > threshold){
+      selectedDinosArray.push(dino);
+    }
+  }
+  return selectedDinosArray;
+};
 
 module.exports = Park;

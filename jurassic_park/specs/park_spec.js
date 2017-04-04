@@ -37,6 +37,14 @@ describe('Park', function() {
     park1.eject('Stegosaurus');
     assert.strictEqual(0, park1.numberOf('Stegosaurus'))
     assert.strictEqual(1, park1.numberOf('Tyrannosaurus'))
-
   })
+
+  it('can find all repro rate > 2', function(){
+    park1.addDino(dino1);
+    park1.addDino(new Dinosaur('Iguanadon',3));
+    park1.addDino(new Dinosaur('Iguanadon',3));
+    park1.addDino(new Dinosaur('Tyrannosaurus'));
+    assert.strictEqual(2, park1.fecundityAbove(2).length);
+  })
+
 })
