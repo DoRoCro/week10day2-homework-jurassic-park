@@ -8,6 +8,7 @@ Park.prototype.addDino = function(dinosaur) {
   this.dinos.push(dinosaur);
   this.numberDinosaurs = this.dinos.length;
 };
+
 Park.prototype.numberOf = function(dinoType) {
   var count = 0;
   for(var dino of this.dinos){
@@ -15,6 +16,7 @@ Park.prototype.numberOf = function(dinoType) {
   }
   return count;
 }
+
 Park.prototype.eject = function(dinoType) {
   var ejected = 0;
   for (var i = this.dinos.length - 1; i >= 0; i--) {
@@ -23,8 +25,10 @@ Park.prototype.eject = function(dinoType) {
       ejected ++;
     }
   }
+  this.numberDinosaurs = this.dinos.length;
   return ejected;
 };
+
 Park.prototype.fecundityAbove = function(threshold) {
   var selectedDinosArray = [];
   for(dino of this.dinos){
@@ -34,5 +38,19 @@ Park.prototype.fecundityAbove = function(threshold) {
   }
   return selectedDinosArray;
 };
+
+Park.prototype.reproduce = function() {
+  var newParkDinos = [];
+  for(var dino of this.dinos){
+    newParkDinos.push(dino);
+    for(var i=1; i<=dino.offspringPerYear; i++){
+      newParkDinos.push(dino);
+    }
+  }
+  this.dinos = newParkDinos;
+  this.numberDinosaurs = this.dinos.length;
+};
+
+
 
 module.exports = Park;
