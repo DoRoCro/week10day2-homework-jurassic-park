@@ -39,6 +39,8 @@ Park.prototype.fecundityAbove = function(threshold) {
   return selectedDinosArray;
 };
 
+// Extension
+
 Park.prototype.reproduce = function() {
   var newParkDinos = [];
   for(var dino of this.dinos){

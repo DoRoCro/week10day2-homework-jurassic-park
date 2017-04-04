@@ -47,6 +47,8 @@ describe('Park', function() {
     assert.strictEqual(2, park1.fecundityAbove(2).length);
   })
 
+// Extensions
+
   it('can update population after 1 year', function(){
     park1.addDino(dino1);
     park1.addDino(new Dinosaur('Iguanadon',3));
