@@ -56,5 +56,15 @@ describe('Park', function() {
     assert.strictEqual(park1.numberOf('Iguanadon'), 4);
     assert.strictEqual(park1.numberOf('Stegosaurus'), 3);
   })
+  it('can update population after 2 years', function(){
+    park1.addDino(dino1);
+    park1.addDino(new Dinosaur('Iguanadon',3));
+    assert.strictEqual(park1.numberDinosaurs, 2);
+    park1.reproduce();
+    park1.reproduce();
+    assert.strictEqual(park1.numberDinosaurs, 25);
+    assert.strictEqual(park1.numberOf('Iguanadon'), 16);
+    assert.strictEqual(park1.numberOf('Stegosaurus'), 9);
+  })
 
 })
